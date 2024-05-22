@@ -209,6 +209,7 @@ class Bank:
         try:
             account.withdraw(amount)
             account.add_transaction("Withdrawn", amount)  # Add withdrawal transaction
+            st.success("Amount withdrawn successfully")
         except InsufficientFundsError as e:
             st.error(str(e))
 
@@ -390,5 +391,3 @@ else:
         login()
     elif choice == "Create User":
         create_user()
-        
-        
